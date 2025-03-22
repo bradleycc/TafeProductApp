@@ -22,6 +22,8 @@ namespace ProductApps
     {
         const double DELIVERY_CHARGE = 25.00;
         const double WRAP_CHARGE = 5.00;
+        const double GST = 1.1;
+
         Product cProduct;
 
         public MainWindow()
@@ -50,6 +52,9 @@ namespace ProductApps
 
             total_charge += WRAP_CHARGE;
             totalChargeAfterWrapTextBox.Text = total_charge.ToString("C");
+
+            total_charge *= GST;
+            totalChargeAfterGSTTextBox.Text = total_charge.ToString("C");
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
