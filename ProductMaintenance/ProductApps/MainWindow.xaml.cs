@@ -21,6 +21,7 @@ namespace ProductApps
     public partial class MainWindow : Window
     {
         const double DELIVERY_CHARGE = 25.00;
+        const double WRAP_CHARGE = 5.00;
         Product cProduct;
 
         public MainWindow()
@@ -46,6 +47,9 @@ namespace ProductApps
 
             total_charge = Convert.ToDouble(cProduct.TotalPayment) + DELIVERY_CHARGE;
             totalChargeTextBox.Text = total_charge.ToString("C");
+
+            total_charge += WRAP_CHARGE;
+            totalChargeAfterWrapTextBox.Text = total_charge.ToString("C");
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
